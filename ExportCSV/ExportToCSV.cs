@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+//To be used under MIT License
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +18,13 @@ namespace ExportCSV
         {
             sb = new StringBuilder();
         }
-
-        public void ExportToCsv(List<TModel> list, out string outputString, HttpContextBase objHttpContext = null)
+        /// <summary>
+        /// This function Exports the incoming List of AnyClassType to a CSV String / Response.Write Command (Optional)
+        /// </summary>
+        /// <param name="itemslist">Pass your List Here. This function will automatically calculate number of columns from total number of Public Properties of Class</param>
+        /// <param name="outputString">You can get CSV Format String in this variable. This is the reason it is declared as OUT</param>
+        /// <param name="objHttpContext">This is an optional parameter. Pass current client's HTTPContext if you want to trigger an Export to CSV download popup in your Web Browser</param>
+        public void ExportToCsv(List<TModel> itemslist, out string outputString, HttpContextBase objHttpContext = null)
         {
             outputString = string.Empty;
          
@@ -43,7 +50,7 @@ namespace ExportCSV
             
 
             loopCount = 0;
-            foreach (TModel item in list)
+            foreach (TModel item in itemslist)
             {
                 Type typeInner = item.GetType();
                 PropertyInfo[] propInfoArrayInner = typeInner.GetProperties();
