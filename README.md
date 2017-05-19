@@ -4,7 +4,7 @@
 
 ![Snapshot Overview of the Process](https://raw.githubusercontent.com/vibs2006/ExportToCSV/master/ExportCSV/icons/Snapshot.png)
 
-#### Declare Class
+#### Declare Class (of any number of public properties)
 ```C#
 public class SampleClass
 {
