@@ -36,8 +36,8 @@ public void sampleMethod()
 ```C#
   objProcessDocument(listObj, out outputString, HttpContext); 
 ```
-### OR
-**If you do not want to triger Response.Write() function and want to simply take the output to string (outputString) to handle in your own CSV then you can pass null in place of the third variable.**
+#### OR
+**If you do not want to triger Response.Write() function and want to simply take the output to string (outputString) to handle in your own CSV (for example saving CSV outstring string to a database or StreamWriter) then you can pass null in place of the third variable.**
 ```C#
   objProcessDocument(listObj, out outputString); //Do not pass HttpContext to prevent trigger of Response.Write
 ```
