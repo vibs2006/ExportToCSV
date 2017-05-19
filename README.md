@@ -2,6 +2,8 @@
 .NET C# 4.5.2 Library to Export Data in CSV File Format using C# as Language
 ## Sample Usage
 
+![Snapshot Overview of the Process](https://raw.githubusercontent.com/vibs2006/ExportToCSV/master/ExportCSV/icons/Snapshot.png)
+
 #### Declare Class
 ```C#
 public class SampleClass
