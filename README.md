@@ -42,8 +42,10 @@ public void sampleMethod()
 ```
 #### Click below to simply download DLL, reference it and start using it in your project 
 [Download ExportToCSV.DLL](https://github.com/vibs2006/ExportToCSV/blob/master/ExportCSV/bin/Debug/ExportCSV.dll?raw=true)
-#### OR
-[Click here to visit GITHUB to see the Source Code)](https://github.com/vibs2006/ExportToCSV)
 
-##### See the Video to Simply Refer ExportToCSV Dll and start using it without any research or efforts!
+#### OR
+
+[Click here to visit GITHUB to see the Source Code](https://github.com/vibs2006/ExportToCSV)
+
+##### See the Video by clicking on image BELOW to Simply Refer ExportToCSV.Dll in a sample ASP.NET MVC 5 Web Application Project and start using it without any research or efforts!
 [![](https://i.ytimg.com/vi/NhUaSHkeYnE/maxresdefault.jpg)](https://www.youtube.com/watch?v=NhUaSHkeYnE)
