@@ -125,5 +125,60 @@ namespace ExportCSV
             return "\"" + input + "\"";
         }
         
+         /// <summary>
+        /// This function Exports the incoming List of AnyClassType to a CSV String 
+        /// </summary>
+        /// <param name="itemslist">Pass your List Here. This function will automatically calculate number of columns from total number of Public Properties of Class</param>                
+        public string ExportToCsv(List<TModel> itemslist)
+        {
+
+            Type type = typeof(TModel);
+            int propertyCount = type.GetProperties().Length;
+
+            PropertyInfo[] propInfoArray = type.GetProperties();
+
+            int loopCount = 0;
+            foreach (var propInfo in propInfoArray)
+            {
+                loopCount += 1;
+                sb.Append("\"" + propInfo.Name + "\"");
+                if (loopCount == propertyCount)
+                {
+                    sb.Append(Environment.NewLine);
+                }
+                else
+                {
+                    sb.Append(",");
+                }
+            }
+
+
+            loopCount = 0;
+            foreach (TModel item in itemslist)
+            {
+                Type typeInner = item.GetType();
+                PropertyInfo[] propInfoArrayInner = typeInner.GetProperties();
+
+                foreach (var innerPropInfo in propInfoArrayInner)
+                {
+                    loopCount += 1;
+                    var columnValue = innerPropInfo.GetValue(item).ToString();
+                    sb.Append(sanitizeCommaAndQuotes(columnValue));
+                    if (loopCount == propertyCount)
+                    {
+                        sb.Append(Environment.NewLine);
+                        loopCount = 0;
+                    }
+                    else
+                    {
+                        sb.Append(",");
+                    }
+                }
+            }
+            return sb.ToString();
+            //Trace.WriteLine(outputString);
+
+        }
+        
     }
 }
