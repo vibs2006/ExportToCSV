@@ -58,7 +58,7 @@ namespace ExportCSV
                 foreach (var innerPropInfo in propInfoArrayInner)
                 {
                     loopCount += 1;
-                    var columnValue = innerPropInfo.GetValue(item).ToString();
+                    var columnValue = innerPropInfo.GetValue(item) == null ? "" : innerPropInfo.GetValue(item).ToString();
                     sb.Append(sanitizeCommaAndQuotes(columnValue));
                     if (loopCount == propertyCount)
                     {
@@ -162,7 +162,7 @@ namespace ExportCSV
                 foreach (var innerPropInfo in propInfoArrayInner)
                 {
                     loopCount += 1;
-                    var columnValue = innerPropInfo.GetValue(item).ToString();
+                    var columnValue = innerPropInfo.GetValue(item) == null ? "" : innerPropInfo.GetValue(item).ToString();
                     sb.Append(sanitizeCommaAndQuotes(columnValue));
                     if (loopCount == propertyCount)
                     {
